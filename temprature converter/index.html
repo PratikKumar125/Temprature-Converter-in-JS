@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+    <label for="temprature">Enter your temprature</label>
+    <br>
+    <input type="text" id = "temp" value="Enter Here" onclick="m()">
+    <select name="options" id="select">
+        <option value="1">Celcius</option>
+        <option value="2">Fahrenhite</option>
+    </select>
+    <br>
+    <a href="#" onclick = "c()">submit</a>
+    <br>
+    <span id = "result"></span>
+    </div>
+    <script type="text/Javascript">
+        function m(){
+            document.getElementById("temp").value="";
+        }
+        function c(){
+            var reff = document.getElementById("select");
+            var val = reff.options[reff.selectedIndex].text;
+            console.log(val);
+            var t = document.getElementById("temp").value;
+            console.log(t);
+            // alert("Are You Sure?");
+            if (val == "Celcius"){
+                var nowt = t * 1.8000 + 32.00;
+                document.getElementById("result").innerHTML = "Temprature after conversion =" +  nowt;
+                document.getElementById("temp").value="";
+            }
+            if (val == "Fahrenhite"){
+                var not = (t - 32) / 1.8;
+                document.getElementById("result").innerHTML = "Temprature after conversion =" +  not;
+                document.getElementById("temp").value="";
+            }
+        }
+    </script>
+</body>
+</html>
